@@ -158,7 +158,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🍳 Recipe Converter</h1>
+        <h1>Recipe Converter</h1>
         
         <div class="input-section">
             <label for="original-amount">Original Measurement</label>
@@ -166,7 +166,7 @@
                 <input type="text" id="original-amount" placeholder="1, 1/2, 0.75">
                 <select id="original-unit">
                     <option value="">Select Unit</option>
-                    <optgroup label="📏 Volume">
+                    <optgroup label="Volume">
                         <option value="cup">Cup</option>
                         <option value="tablespoon">Tablespoon</option>
                         <option value="teaspoon">Teaspoon</option>
@@ -174,13 +174,13 @@
                         <option value="milliliter">Milliliter</option>
                         <option value="liter">Liter</option>
                     </optgroup>
-                    <optgroup label="⚖️ Weight">
+                    <optgroup label="Weight">
                         <option value="ounce">Ounce</option>
                         <option value="pound">Pound</option>
                         <option value="gram">Gram</option>
                         <option value="kilogram">Kilogram</option>
                     </optgroup>
-                    <optgroup label="🥄 Other">
+                    <optgroup label="Other">
                         <option value="pinch">Pinch</option>
                         <option value="dash">Dash</option>
                     </optgroup>
@@ -199,7 +199,7 @@
             <label for="output-unit">Convert to (optional)</label>
             <select id="output-unit">
                 <option value="">Same as input</option>
-                <optgroup label="📏 Volume">
+                <optgroup label="Volume">
                     <option value="cup">Cup</option>
                     <option value="tablespoon">Tablespoon</option>
                     <option value="teaspoon">Teaspoon</option>
@@ -207,13 +207,13 @@
                     <option value="milliliter">Milliliter</option>
                     <option value="liter">Liter</option>
                 </optgroup>
-                <optgroup label="⚖️ Weight">
+                <optgroup label="Weight">
                     <option value="ounce">Ounce</option>
                     <option value="pound">Pound</option>
                     <option value="gram">Gram</option>
                     <option value="kilogram">Kilogram</option>
                 </optgroup>
-                <optgroup label="🥄 Other">
+                <optgroup label="Other">
                     <option value="pinch">Pinch</option>
                     <option value="dash">Dash</option>
                 </optgroup>
@@ -221,15 +221,11 @@
             <div class="example-text">Choose different unit for the result</div>
         </div>
 
-        <button type="button" class="calculate-btn" onclick="calculateResult()">✨ Calculate</button>
+        <button type="button" class="calculate-btn" onclick="calculateResult()">Calculate</button>
 
         <div class="result-section">
             <label for="output">Your Result</label>
             <textarea id="output" readonly placeholder="Your converted measurement will appear here..."></textarea>
-        </div>
-
-        <div class="conversion-hint">
-            <strong>💡 Pro Tip:</strong> You can convert between units too! Try converting 1 cup to tablespoons, or 500g to pounds.
         </div>
     </div>
 
@@ -344,7 +340,7 @@
             const outputUnit = document.getElementById('output-unit').value || originalUnit;
             
             if (!originalAmount || !originalUnit || !reductionFactor) {
-                document.getElementById('output').value = '❌ Please fill in all required fields.';
+                document.getElementById('output').value = 'Please fill in all required fields.';
                 return;
             }
             
@@ -356,7 +352,7 @@
             if (outputUnit !== originalUnit) {
                 finalAmount = convertUnits(reducedAmount, originalUnit, outputUnit);
                 if (finalAmount === null) {
-                    document.getElementById('output').value = '❌ Cannot convert between these unit types.\n(Volume ↔ Weight ↔ Other)';
+                    document.getElementById('output').value = 'Cannot convert between these unit types.\n(Volume ↔ Weight ↔ Other)';
                     return;
                 }
             }
@@ -372,7 +368,7 @@
                 else if (!unitDisplay.endsWith('s')) pluralUnit += 's';
             }
             
-            document.getElementById('output').value = `✅ ${formattedAmount} ${pluralUnit}`;
+            document.getElementById('output').value = `${formattedAmount} ${pluralUnit}`;
         }
 
         // Allow Enter key to calculate
