@@ -323,7 +323,6 @@
             const originalAmount = parseNumber(document.getElementById('original-amount').value);
             const originalUnit = document.getElementById('original-unit').value;
             const reductionFactor = parseNumber(document.getElementById('reduction-factor').value);
-            const outputUnit = document.getElementById('output-unit').value || originalUnit;
             
             if (!originalAmount || !originalUnit || !reductionFactor) {
                 document.getElementById('output').value = 'Please fill in all required fields.';
@@ -331,20 +330,10 @@
             }
             
             // Calculate the reduced amount
-            const reducedAmount = originalAmount * reductionFactor;
-            
-            // Convert units if necessary
-            let finalAmount = reducedAmount;
-            if (outputUnit !== originalUnit) {
-                finalAmount = convertUnits(reducedAmount, originalUnit, outputUnit);
-                if (finalAmount === null) {
-                    document.getElementById('output').value = 'Cannot convert between these unit types.\n(Volume ↔ Weight ↔ Other)';
-                    return;
-                }
-            }
+            const finalAmount = originalAmount * reductionFactor;
             
             const formattedAmount = formatResult(finalAmount);
-            const unitDisplay = outputUnit.replace('-', ' ');
+            const unitDisplay = originalUnit.replace('-', ' ');
             
             // Add proper pluralization
             let pluralUnit = unitDisplay;
