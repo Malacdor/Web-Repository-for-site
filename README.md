@@ -22,17 +22,15 @@ Other
 
 Usage
 
-1. Enter the original measurement amount (e.g., `1.5` or `1 1/2`)
+1. Enter the original measurement amount (e.g., 1.5 or 1 1/2)
 2. Select the measurement unit from the dropdown
-3. Enter the scaling factor (e.g., `0.5` to halve, `2` to double)
+3. Enter the scaling factor (e.g., 0.5 to halve, 2 to double)
 4. Click "Calculate" to see the scaled result
 
 Example
-- Original: `2 cups`
-- Multiply by: `0.5` 
-- Result: `1 cup`
-
-Technical Implementation
+- Original: 2 cups
+- Multiply by: 0.5 
+- Result: 1 cup
 
 Architecture Choices
 
@@ -43,12 +41,6 @@ Client-Side Processing: All calculations happen in the browser using JavaScript,
 User Interface Design, Uses CSS Flexbox for consistent centering and responsive behavior across different screen sizes. The container adapts from 400px max-width down to mobile dimensions.
 
 Visual Hierarchy: Gradient background provides visual appeal while maintaining focus on the white container. Input sections use subtle background colors to group related controls without overwhelming the interface.
-
-Accessibility Considerations: 
-- Semantic HTML structure with proper labels
-- Keyboard navigation support (Enter key triggers calculation)
-- Sufficient color contrast ratios
-- Focus states for interactive elements
 
 Fraction Processing
 
@@ -64,9 +56,9 @@ Fraction Mapping: Predefined fraction dictionary covers the most common cooking 
 
 Input Validation
 
-Graceful Error Handling: The application validates required fields and provides clear feedback messages without breaking functionality. Invalid inputs default to zero rather than causing JavaScript errors.
+The application validates required fields and provides clear feedback messages without breaking functionality. Invalid inputs default to zero rather than causing JavaScript errors.
 
-Flexible Number Recognition: Accepts various input formats including integers, decimals, and fractions, making the tool adaptable to different user
+Accepts various input formats including integers, decimals, and fractions, making the tool adaptable to different user
 
 
 Future Updates
